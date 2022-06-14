@@ -1,0 +1,74 @@
+#
+##postgresql:
+##  host: mh-x1
+##  port: 5431
+##  user: postgres
+##  password: '123'
+##  database: mh
+##
+##kafka:
+##  host: mh-x1
+##  port: 9092
+##  article_topic: crawler-news-post
+#
+#services:
+#  bloom_filter:
+#    host: mh-x2
+#    port: 9001
+#
+#mongo:
+#  host: mh-es-x1
+#  port: 27017
+#  user: developer
+#  password: '123456aA@'
+#  database: xsocial
+#
+postgresql:
+  host: 127.0.0.1
+  port: 5320
+  user: root
+  password: 'root'
+  database: social
+
+kafka:
+  host: 127.0.0.1
+  port: 9092
+  article_topic: crawler-news-post
+
+
+
+#postgresql:
+#  host: mh-x1
+#  port: 5431
+#  user: postgres
+#  password: '123'
+#  database: mh
+#
+#kafka:
+#  host: mh-x1
+#  port: 9092
+#  article_topic: crawler-news-post
+
+services:
+  bloom_filter:
+    host: mh-x2
+    port: 9001
+
+mongo:
+  host: mh-es-x1
+  port: 27017
+  user: developer
+  password: '123456aA@'
+  database: xsocial
+#
+#postgresql:
+#  host: 127.0.0.1
+#  port: 5320
+#  user: postgres
+#  password: 'mh'
+#  database: alert
+#
+#kafka:
+#  host: 127.0.0.1
+#  port: 9092
+#  article_topic: crawler-news-post

@@ -1,0 +1,6 @@
+data
+.idea
+logs
+pid
+config/*.json
+venv

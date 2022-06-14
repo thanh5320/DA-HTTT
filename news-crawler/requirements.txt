@@ -1,0 +1,15 @@
+Scrapy==2.4.0
+Twisted==20.3.0
+kafka_python==2.0.2
+psycopg2-binary==2.9.3
+PyYAML==5.3.1
+itemadapter==0.1.1
+xmltodict==0.12.0
+extruct==0.10.0
+ftfy==5.8
+sqlitedict==1.7.0
+w3lib==1.22.0
+pymongo==3.11.0
+grpcio~=1.43.0
+grpcio-tools~=1.43.0
+random-user-agent~=1.0.1
