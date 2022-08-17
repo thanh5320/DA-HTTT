@@ -1,0 +1,141 @@
+.container-dashboard {
+  margin: 0 4rem;
+  .dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2.1rem 0;
+    h5 {
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 20px;
+    }
+  }
+}
+
+.container-charts {
+  &-charts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 4.2rem;
+    row-gap: 2.8rem;
+    &__item {
+      background-color: #ffffff;
+      padding: 1.2rem 2.4rem;
+      border-radius: 10px;
+      -webkit-box-shadow: 0px 4px 17px 1px rgba(0, 0, 0, 0.29);
+      box-shadow: 0px 4px 10px 1px rgba(0, 0, 0, 0.29);
+      &-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        p {
+          text-transform: uppercase;
+          font-weight: 700;
+          letter-spacing: 0.1rem;
+        }
+      }
+      &-actions {
+        display: flex;
+        column-gap: 1.2rem;
+        span {
+          cursor: pointer;
+          svg {
+            margin-right: 0.4rem;
+          }
+        }
+        span:first-child {
+          color: #2f80ed;
+        }
+        span:last-child {
+          color: #eb5757;
+        }
+      }
+    }
+  }
+}
+
+.container-detail {
+  padding: 0 4rem;
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    padding: 2.4rem 0;
+    margin-bottom: 3.2rem;
+    align-items: center;
+    &--right {
+      display: flex;
+      column-gap: 2.4rem;
+    }
+  }
+}
+
+.create-chart {
+  padding: 1.2rem 2.4rem;
+  overflow-y: auto;
+  height: 100%;
+  h5 {
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+  }
+  .base-button {
+    margin: auto;
+  }
+}
+
+.update-chart {
+  padding: 1.2rem 2.4rem;
+  overflow-y: auto;
+  height: 100%;
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 600;
+    font-weight: 2rem;
+    text-transform: uppercase;
+    margin: 1.2rem 0;
+    svg {
+      width: 1.2rem;
+    }
+  }
+  .base-button {
+    width: 100%;
+    margin-top: 3.2rem;
+  }
+}
+
+.container-chart-form {
+  &__field {
+    margin-bottom: 1.2rem;
+    &:last-child {
+      label {
+        font-weight: 600;
+        margin-bottom: 0.8rem;
+      }
+    }
+  }
+}
+
+.container-create-dashboard {
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2.4rem 0;
+    h5 {
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 20px;
+    }
+    svg {
+      width: 1.2rem;
+    }
+  }
+  &__btn {
+    width: 100%;
+    margin-top: 3.2rem;
+  }
+}

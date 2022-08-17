@@ -1,0 +1,60 @@
+.container-project {
+  margin: 0 4rem;
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2.1rem 0;
+    h2 {
+      text-transform: uppercase;
+    }
+  }
+}
+
+.container-create-project {
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2.4rem;
+    margin-top: 2.4rem;
+    svg {
+      width: 1.2rem;
+    }
+    p {
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+  }
+  &__submit {
+    width: 100%;
+  }
+  &__body {
+    overflow-y: auto;
+    max-height: 70vh;
+  }
+}
+
+.container-project-form {
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 2.1rem 0;
+        p {
+            margin-bottom: 0;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+    }
+    &__key {
+        margin-bottom: 1.2rem;
+        &-title {
+            font-weight: 500;
+            span {
+                color: var(--error-color);
+                font-weight: 400;
+            }
+        }
+    }
+}
