@@ -5,3 +5,6 @@
 - logstash: lấy dữ liệu từ kafka đẩy xử lý, phân loại và đẩy vào elasticsearch
 - social: backend của project viết bằng sping boot
 - ls-frontend: frontend của project
+
+## Link github:
+https://github.com/thanh5320/DA-HTTT
