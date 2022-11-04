@@ -1,4 +1,4 @@
-FROM python:3.9.5-slim
+FROM python:3.10.6
 RUN apt-get update \
     && apt-get -y install libpq-dev gcc
 COPY . .
