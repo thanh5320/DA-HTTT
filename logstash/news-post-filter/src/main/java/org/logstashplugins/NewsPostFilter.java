@@ -6,14 +6,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.logstashplugins.config.ObjectMapperConfig;
-import org.logstashplugins.config.database.DetectProject;
-import org.logstashplugins.config.database.PostgreSqlConnection;
 import org.logstashplugins.mapper.NewsPostToArticleMapper;
 import org.logstashplugins.mapper.NewsPostToArticleMapperImpl;
 import org.logstashplugins.model.Article;
 import org.logstashplugins.model.kafka.NewsPost;
 import org.logstashplugins.sentiment.SentimentDetection;
-import org.logstashplugins.utils.NewsSourceClassify;
 import org.logstashplugins.utils.ValidNewsPost;
 import org.logstashplugins.utils.processing.StringNormalize;
 
@@ -23,7 +20,7 @@ import java.util.Collections;
 @LogstashPlugin(name = "news_post_filter")
 public class NewsPostFilter implements Filter {
     private static final Logger log = LogManager.getLogger(NewsPostFilter.class);
-    private static final DetectProject detectProject = new DetectProject();
+//    private static final DetectProject detectProject = new DetectProject();
     public static final PluginConfigSpec<String> SOURCE_CONFIG =
             PluginConfigSpec.stringSetting("message", "message");
 
@@ -39,7 +36,7 @@ public class NewsPostFilter implements Filter {
         this.objectMapper = ObjectMapperConfig.getObjectMapper();
         mapper = new NewsPostToArticleMapperImpl();
         sentimentDetection = new SentimentDetection();
-        DetectProject.projectMap = PostgreSqlConnection.getProjectMap();
+//        DetectProject.projectMap = PostgreSqlConnection.getProjectMap();
     }
 
     @Override
@@ -95,7 +92,7 @@ public class NewsPostFilter implements Filter {
         Article article = mapper.newsPostToArticle(newsPost);
         article = StringNormalize.processArticle(article);
         article.setSentiment(sentimentDetection.detect(article.getContent()));
-        article.setProjectIds(detectProject.detect(article.getContent()));
+//        article.setProjectIds(detectProject.detect(article.getContent()));
         String message = null;
         try {
             message = objectMapper.writeValueAsString(article);

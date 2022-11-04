@@ -26,7 +26,7 @@ public class Config {
     public RestHighLevelClient client() {
         RestHighLevelClient client = null;
         try {
-            List<String> hosts = asList("127.0.0.1:9200");
+            List<String> hosts = asList("38.242.198.251:9200");
             List<HttpHost> listHttpHost = new LinkedList<>();
 
             for (String host : hosts) {
