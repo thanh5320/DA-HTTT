@@ -1,0 +1,551 @@
+2022-09-07 09:37:36 [scrapy.utils.log] INFO: Scrapy 2.4.0 started (bot: xsocial_news_bot)
+2022-09-07 09:37:36 [scrapy.utils.log] INFO: Versions: lxml 4.9.1.0, libxml2 2.9.14, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 20.3.0, Python 3.10.4 (main, Jun 29 2022, 12:14:53) [GCC 11.2.0], pyOpenSSL 22.0.0 (OpenSSL 3.0.3 3 May 2022), cryptography 37.0.2, Platform Linux-5.15.0-47-generic-x86_64-with-glibc2.35
+2022-09-07 09:37:36 [scrapy.crawler] INFO: Overridden settings:
+{'AJAXCRAWL_ENABLED': True,
+ 'BOT_NAME': 'xsocial_news_bot',
+ 'CONCURRENT_ITEMS': 1000,
+ 'CONCURRENT_REQUESTS': 5000,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 5000,
+ 'COOKIES_ENABLED': False,
+ 'DOWNLOAD_DELAY': 2,
+ 'DOWNLOAD_TIMEOUT': 60,
+ 'DUPEFILTER_CLASS': 'scrapy.dupefilters.BaseDupeFilter',
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_LEVEL': 'INFO',
+ 'NEWSPIDER_MODULE': 'news_bot.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 1000,
+ 'RETRY_ENABLED': False,
+ 'SPIDER_MODULES': ['news_bot.spiders'],
+ 'TELNETCONSOLE_PORT': None,
+ 'USER_AGENT': 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 '
+               '(KHTML, like Gecko) Chrome/37.0.2049.0 Safari/537.36'}
+2022-09-07 09:37:36 [scrapy.extensions.telnet] INFO: Telnet Password: 82c96c7238afd558
+2022-09-07 09:37:36 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-09-07 09:37:36 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] Process 18989 is starting
+2022-09-07 09:37:36 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] Process 18989 is starting, with 4 domains
+2022-09-07 09:37:36 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.ajaxcrawl.AjaxCrawlMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-09-07 09:37:36 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-09-07 09:37:36 [kafka.conn] INFO: <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]>: connecting to localhost:9092 [('127.0.0.1', 9092) IPv4]
+2022-09-07 09:37:36 [kafka.conn] INFO: Probing node bootstrap-0 broker version
+2022-09-07 09:37:36 [kafka.conn] INFO: <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]>: Connection complete.
+2022-09-07 09:37:36 [kafka.conn] INFO: Broker version identified as 2.5.0
+2022-09-07 09:37:36 [kafka.conn] INFO: Set configuration api_version=(2, 5, 0) to skip auto check_version requests on startup
+2022-09-07 09:37:36 [scrapy.middleware] INFO: Enabled item pipelines:
+['news_bot.pipelines.data_crawler.NewsCrawlerPipeline',
+ 'news_bot.pipelines.data_normalize.DataNormalizePipeline',
+ 'news_bot.pipelines.data_pusher_kafka.KafkaPipeline']
+2022-09-07 09:37:36 [scrapy.core.engine] INFO: Spider opened
+2022-09-07 09:37:36 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-09-07 09:37:36 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:38541
+2022-09-07 09:37:36 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] Process 18989 - domain : https://dantri.com.vn
+2022-09-07 09:37:36 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] Process 18989 - domain : https://vnexpress.net
+2022-09-07 09:37:36 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] Process 18989 - domain : https://soha.vn
+2022-09-07 09:37:36 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] Process 18989 - domain : https://kenh14.vn
+2022-09-07 09:37:36 [news_bot.spiders.news_spider] INFO: Process 18989 : https://soha.vn has 125 articles found.
+2022-09-07 09:37:36 [news_bot.spiders.news_spider] INFO: Process 18989 : https://kenh14.vn has 34 articles found.
+2022-09-07 09:37:36 [news_bot.spiders.news_spider] INFO: Process 18989 : https://kenh14.vn has 14 sub-paths.
+2022-09-07 09:37:36 [news_bot.spiders.news_spider] INFO: Process 18989 : https://dantri.com.vn has 0 articles found.
+2022-09-07 09:37:36 [news_bot.spiders.news_spider] INFO: Process 18989 : https://dantri.com.vn has 0 sub-paths.
+2022-09-07 09:37:36 [news_bot.spiders.news_spider] INFO: Process 18989 : https://vnexpress.net has 25 articles found.
+2022-09-07 09:37:36 [news_bot.spiders.news_spider] INFO: Process 18989 : https://vnexpress.net has 22 sub-paths.
+2022-09-07 09:37:36 [news_bot.spiders.news_spider] INFO: Process 18989 : https://soha.vn has 13 sub-paths.
+2022-09-07 09:37:37 [news_bot.spiders.news_spider] INFO: Process 18989 : https://video.vnexpress.net has 0 articles found.
+2022-09-07 09:37:38 [news_bot.spiders.news_spider] INFO: Process 18989 : https://vnexpress.net/goc-nhin has 19 articles found.
+2022-09-07 09:37:39 [news_bot.spiders.news_spider] INFO: Process 18989 : https://video.kenh14.vn/ has 0 articles found.
+2022-09-07 09:37:39 [py.warnings] WARNING: /home/thanhnv/.local/lib/python3.10/site-packages/rdflib_jsonld/__init__.py:9: DeprecationWarning: The rdflib-jsonld package has been integrated into rdflib as of rdflib==6.0.0.  Please remove rdflib-jsonld from your project's dependencies.
+  warnings.warn(
+
+2022-09-07 09:37:39 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is empty] https://soha.vn/tin-hot.htm
+2022-09-07 09:37:40 [news_bot.spiders.news_spider] INFO: Process 18989 : https://kenh14.vn/star.chn has 7 articles found.
+2022-09-07 09:37:40 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://video.vnexpress.net/tin-tuc/thoi-su/nhieu-oto-chet-may-tren-quoc-lo-51-sau-mua-lon-4508124.html
+2022-09-07 09:37:41 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/vu-dung-500000-dong-trom-xe-tesla-19-ty-bat-thop-ca-ma-nhay-20220827152851816.htm failed: time data '2022-09-07T08:38::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:37:42 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://kenh14.vn/chan-dung-iphone-14-series-ro-net-truoc-gio-g-nang-cap-toan-dien-nhieu-phien-ban-mau-sac-moi-20220906102040678.chn
+2022-09-07 09:37:42 [news_bot.spiders.news_spider] INFO: Process 18989 : https://vnexpress.net/hai has 31 articles found.
+2022-09-07 09:37:43 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/cuoc-hoi-huong-sau-16-nam-cua-cau-be-goc-viet-co-khoi-u-che-nua-mat-duoc-me-my-nhan-nuoi-20220906164608779.htm failed: time data '2022-09-07T08:43::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:37:43 [news_bot.spiders.news_spider] INFO: Process 18989 : https://vnexpress.net/tam-su has 25 articles found.
+2022-09-07 09:37:45 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://kenh14.vn/kieu-minh-tuan-khi-ngoi-sao-phong-ve-thanh-nguoi-anh-am-ap-tai-2-ngay-1-dem-20220906085725946.chn
+2022-09-07 09:37:46 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/thuc-hu-chuyen-be-gai-6-tuoi-bi-bat-coc-truoc-cong-truong-o-thai-binh-20220907072434459.htm failed: time data '2022-09-07T07:42::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:37:46 [news_bot.spiders.news_spider] INFO: Process 18989 : https://vnexpress.net/y-kien has 31 articles found.
+2022-09-07 09:37:48 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/nguon-goc-cua-pho-tu-nha-may-det-lon-nhat-dong-duong-cho-den-mon-an-dam-chat-ha-noi-20220906164954977.htm failed: time data '2022-09-07T08:06::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:37:49 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://kenh14.vn/hoa-minzy-len-tieng-toi-va-anh-hai-thuc-su-da-khong-the-quay-lai-voi-nhau-20220906134120896.chn
+2022-09-07 09:37:49 [news_bot.spiders.news_spider] INFO: Process 18989 : https://vnexpress.net/oto-xe-may has 48 articles found.
+2022-09-07 09:37:51 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/gia-han-tam-giam-nguyen-phuong-hang-them-gan-2-thang-20220907071152622.htm failed: time data '2022-09-07T07:17::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:37:52 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://kenh14.vn/san-tay-du-ky-lan-dau-duoc-phat-hien-nho-tivi-man-hinh-lon-20220906160924215.chn
+2022-09-07 09:37:52 [news_bot.spiders.news_spider] INFO: Process 18989 : https://vnexpress.net/so-hoa has 36 articles found.
+2022-09-07 09:37:54 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/o-hue-co-mot-canh-rung-thuoc-he-cuc-quy-hiem-con-sot-lai-o-dong-nam-a-20220906145442151.htm failed: time data '2022-09-07T07:08::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:37:54 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://kenh14.vn/hyun-bin-duoc-trong-thay-thap-tung-son-ye-jin-den-benh-vien-vao-dem-muon-202209061603323.chn
+2022-09-07 09:37:54 [news_bot.spiders.news_spider] INFO: Process 18989 : https://vnexpress.net/du-lich has 55 articles found.
+2022-09-07 09:37:55 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://video.vnexpress.net/tin-tuc/food/ga-boc-la-sen-nuong-dat-set-ban-tram-con-moi-ngay-4505436.html
+2022-09-07 09:37:56 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/quang-hai-nhan-them-canh-bao-o-pau-fc-danh-mat-loi-the-so-truong-vao-tay-dong-doi-20220906173827217.htm failed: time data '2022-09-06T19:00::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:37:56 [news_bot.spiders.news_spider] INFO: Process 18989 : https://vnexpress.net/doi-song has 37 articles found.
+2022-09-07 09:37:57 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://kenh14.vn/nga-ngua-voi-loat-anh-tren-mang-va-doi-thuc-khac-xa-mot-troi-mot-vuc-20220906162150536.chn
+2022-09-07 09:37:58 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://video.vnexpress.net/tin-tuc/du-lich/du-khach-trai-nghiem-cau-kinh-dai-nhat-the-gioi-4505717.html
+2022-09-07 09:37:59 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/chay-lon-tai-karaoke-o-binh-duong-13-nguoi-chet-20220907083132951.htm failed: time data '2022-09-07T08:31::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:38:00 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://kenh14.vn/nhung-minh-tinh-lan-dan-voi-vai-dien-chi-vi-qua-xinh-dep-20220906112658242.chn
+2022-09-07 09:38:00 [news_bot.spiders.news_spider] INFO: Process 18989 : https://vnexpress.net/suc-khoe has 43 articles found.
+2022-09-07 09:38:01 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://video.vnexpress.net/tin-tuc/thoi-su/diem-vui-choi-o-tp-hcm-ha-noi-ken-dac-nguoi-4506698.html
+2022-09-07 09:38:01 [news_bot.spiders.news_spider] INFO: Process 18989 : https://vnexpress.net/giao-duc has 31 articles found.
+2022-09-07 09:38:02 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/giua-mua-he-khong-dieu-hoa-cua-chau-au-nguoi-trung-quoc-nhin-ra-co-hoi-ban-hang-20220729151834401.htm failed: time data '2022-07-29T15:20::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:38:02 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://kenh14.vn/song-hye-kyo-lai-bi-khan-gia-len-an-vi-mot-ly-do-khong-ai-ngo-toi-20220906203727988.chn
+2022-09-07 09:38:03 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://video.vnexpress.net/tin-tuc/du-lich/soi-den-ngam-bien-vo-cuc-tu-3h-sang-4506662.html
+2022-09-07 09:38:04 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://kenh14.vn/dien-mao-cua-3-nguoi-dep-gara-hanh-phuc-len-phim-bi-dim-ngoai-doi-tre-trung-sanh-dieu-20220906153218408.chn
+2022-09-07 09:38:05 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/giac-mong-cong-viec-trong-mo-cua-gioi-cong-nghe-trung-quoc-tan-vo-20220808095516132.htm failed: time data '2022-08-08T09:55::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:38:05 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://video.vnexpress.net/tin-tuc/du-lich/cay-co-don-hut-hang-nghin-khach-tham-quan-4505087.html
+2022-09-07 09:38:05 [news_bot.spiders.news_spider] INFO: Process 18989 : https://vnexpress.net/phap-luat has 44 articles found.
+2022-09-07 09:38:06 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://kenh14.vn/kinh-hai-voi-cay-ba-chia-dai-3m-cua-thieu-nien-mang-theo-tren-pho-20220906141932011.chn
+2022-09-07 09:38:06 [news_bot.spiders.news_spider] INFO: Process 18989 : https://vnexpress.net/the-thao has 39 articles found.
+2022-09-07 09:38:07 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://video.vnexpress.net/tin-tuc/nhip-song/ngoi-nha-tuong-da-cao-2-m-biet-lap-tren-nui-cao-4507074.html
+2022-09-07 09:38:08 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/thoi-dai-vi-chip-sap-ket-thuc-hay-chuan-bi-chao-don-ky-nguyen-cua-sieu-chip-20220808101200441.htm failed: time data '2022-08-08T10:30::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:38:09 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://kenh14.vn/tham-quan-thi-tran-que-huong-cua-tham-tu-lung-danh-conan-den-goc-nao-cung-nhu-dang-lac-buoc-trong-truyen-tranh-20220906142413966.chn
+2022-09-07 09:38:09 [news_bot.spiders.news_spider] INFO: Process 18989 : https://vnexpress.net/giai-tri has 40 articles found.
+2022-09-07 09:38:10 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/khi-nao-tat-song-cong-nghe-2g-tai-cac-tinh-thanh-20220808141810124.htm failed: time data '2022-08-08T14:17::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:38:11 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://kenh14.vn/hoa-minzy-bao-ve-ban-trai-cu-chia-tay-van-minh-nhung-vi-sao-van-vuong-tranh-cai-2022090622193078.chn
+2022-09-07 09:38:12 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is empty] https://soha.vn/cong-nghe.htm
+2022-09-07 09:38:12 [news_bot.spiders.news_spider] INFO: Process 18989 : https://vnexpress.net/khoa-hoc has 35 articles found.
+2022-09-07 09:38:13 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://kenh14.vn/phim-kinh-di-cua-hoa-hau-tieu-vy-tung-poster-moi-vi-sao-netizen-dong-loat-doi-doi-hinh-cua-minh-du-2022090622415276.chn
+2022-09-07 09:38:14 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/su-dung-va-bao-duong-dieu-hoa-xe-hoi-the-nao-cho-hieu-qua-20220906164508801.htm failed: time data '2022-09-06T21:12::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:38:15 [news_bot.spiders.news_spider] INFO: Process 18989 : https://vnexpress.net/kinh-doanh has 47 articles found.
+2022-09-07 09:38:16 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER_DONE] parse_detail https://kenh14.vn/pax-thien-ho-tong-me-angelina-jolie-di-mua-sam-20220906212906524.chn
+2022-09-07 09:38:16 [news_bot.pipelines.data_pusher_kafka] INFO: KafkaPipeline-processItem done https://kenh14.vn/pax-thien-ho-tong-me-angelina-jolie-di-mua-sam-20220906212906524.chn
+2022-09-07 09:38:16 [kafka.conn] INFO: <BrokerConnection node_id=0 host=thanhnv:9092 <connecting> [IPv4 ('127.0.1.1', 9092)]>: connecting to thanhnv:9092 [('127.0.1.1', 9092) IPv4]
+2022-09-07 09:38:16 [kafka.conn] INFO: <BrokerConnection node_id=0 host=thanhnv:9092 <connecting> [IPv4 ('127.0.1.1', 9092)]>: Connection complete.
+2022-09-07 09:38:16 [kafka.conn] INFO: <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connected> [IPv4 ('127.0.0.1', 9092)]>: Closing connection. 
+2022-09-07 09:38:17 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/lo-beijing-u5-plus-moi-ve-viet-nam-thang-nay-tang-gia-len-508-trieu-van-re-hon-mg5-20220906095712966.htm failed: time data '2022-09-07T09:14::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:38:19 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER_DONE] parse_detail https://kenh14.vn/nu-dai-gia-u70-quay-roi-tinh-duc-nam-dien-vien-9x-tren-song-livestream-2022090620593182.chn
+2022-09-07 09:38:19 [news_bot.pipelines.data_pusher_kafka] INFO: KafkaPipeline-processItem done https://kenh14.vn/nu-dai-gia-u70-quay-roi-tinh-duc-nam-dien-vien-9x-tren-song-livestream-2022090620593182.chn
+2022-09-07 09:38:19 [news_bot.spiders.news_spider] INFO: Process 18989 : https://vnexpress.net/podcast has 0 articles found.
+2022-09-07 09:38:19 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/vu-dung-500000-dong-trom-xe-tesla-gia-19-ty-hau-qua-khi-cau-do-qua-don-gian-20220827105834143.htm failed: time data '2022-09-06T08:47::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:38:20 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER_DONE] parse_detail https://kenh14.vn/cau-do-tieng-viet-ca-mong-het-nghi-he-goi-la-ca-gi-20220907064352066.chn
+2022-09-07 09:38:20 [news_bot.pipelines.data_pusher_kafka] INFO: KafkaPipeline-processItem done https://kenh14.vn/cau-do-tieng-viet-ca-mong-het-nghi-he-goi-la-ca-gi-20220907064352066.chn
+2022-09-07 09:38:21 [news_bot.spiders.news_spider] INFO: Process 18989 : https://vnexpress.net/the-gioi has 44 articles found.
+2022-09-07 09:38:22 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/lo-dien-mau-o-to-se-thay-the-honda-brio-tai-viet-nam-suv-gia-re-nhieu-trang-bi-tien-nghi-20220905103357728.htm failed: time data '2022-09-05T11:45::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:38:23 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER_DONE] parse_detail https://kenh14.vn/top-3-miss-world-vietnam-2022-dung-canh-phu-huynh-nguoi-day-thi-thanh-cong-nguoi-dep-do-di-truyen-20220907074350934.chn
+2022-09-07 09:38:24 [news_bot.pipelines.data_pusher_kafka] INFO: KafkaPipeline-processItem done https://kenh14.vn/top-3-miss-world-vietnam-2022-dung-canh-phu-huynh-nguoi-day-thi-thanh-cong-nguoi-dep-do-di-truyen-20220907074350934.chn
+2022-09-07 09:38:24 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is empty] https://soha.vn/xe.htm
+2022-09-07 09:38:24 [news_bot.spiders.news_spider] INFO: Process 18989 : https://vnexpress.net/goc-nhin has 19 articles found.
+2022-09-07 09:38:26 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER_DONE] parse_detail https://kenh14.vn/mlb-lancome-calvin-klein-dong-loat-tung-sale-khung-cac-chien-than-shopping-mau-chot-deal-tu-hom-nay-20220907072119705.chn
+2022-09-07 09:38:26 [news_bot.pipelines.data_pusher_kafka] INFO: KafkaPipeline-processItem done https://kenh14.vn/mlb-lancome-calvin-klein-dong-loat-tung-sale-khung-cac-chien-than-shopping-mau-chot-deal-tu-hom-nay-20220907072119705.chn
+2022-09-07 09:38:27 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/trung-nguyen-legend-thuong-hieu-tinh-thuc-20220803173954649.htm failed: time data '2022-08-03T19:30::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:38:27 [news_bot.spiders.news_spider] INFO: Process 18989 : https://vnexpress.net/thoi-su has 31 articles found.
+2022-09-07 09:38:29 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/ca-phe-trong-triet-ly-y-hoc-phuong-dong-20220815112407417.htm failed: time data '2022-08-16T08:00::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:38:30 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER_DONE] parse_detail https://kenh14.vn/chan-vay-cong-so-mix-cung-5-kieu-giay-nay-la-thanh-lich-ton-dang-nhat-20220907073854966.chn
+2022-09-07 09:38:30 [news_bot.pipelines.data_pusher_kafka] INFO: KafkaPipeline-processItem done https://kenh14.vn/chan-vay-cong-so-mix-cung-5-kieu-giay-nay-la-thanh-lich-ton-dang-nhat-20220907073854966.chn
+2022-09-07 09:38:30 [news_bot.spiders.news_spider] INFO: Process 18989 : https://vnexpress.net/tin-tuc-24h has 30 articles found.
+2022-09-07 09:38:31 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER_DONE] parse_detail https://video.vnexpress.net/tin-tuc/thoi-su/canh-sat-cuu-nhieu-nguoi-mac-ket-trong-dam-chay-4508153.html
+2022-09-07 09:38:31 [news_bot.pipelines.data_pusher_kafka] INFO: KafkaPipeline-processItem done https://video.vnexpress.net/tin-tuc/thoi-su/canh-sat-cuu-nhieu-nguoi-mac-ket-trong-dam-chay-4508153.html
+2022-09-07 09:38:31 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER_DONE] parse_detail https://kenh14.vn/10-trai-nghiem-kham-pha-tuyet-nhat-o-viet-nam-20220906204817968.chn
+2022-09-07 09:38:31 [news_bot.pipelines.data_pusher_kafka] INFO: KafkaPipeline-processItem done https://kenh14.vn/10-trai-nghiem-kham-pha-tuyet-nhat-o-viet-nam-20220906204817968.chn
+2022-09-07 09:38:32 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/nha-bao-ky-tac-chan-dung-cac-anh-hung-tinh-bao-moi-cong-dan-co-quyen-nghi-lon-co-ma-20220822151256155.htm failed: time data '2022-08-23T07:36::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:38:33 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://kenh14.vn/thong-nhat-phuong-an-nghi-tet-nguyen-dan-2023-keo-dai-7-ngay-20220906150801494.chn
+2022-09-07 09:38:34 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://vnexpress.net/giam-doc-y-te-chi-dao-chan-doan-benh-nhe-thanh-nang-4508035.html
+2022-09-07 09:38:35 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/ca-phe-nguon-nang-luong-tuyet-voi-cho-than-tri-va-the-chat-20220905140827193.htm failed: time data '2022-09-06T08:00::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:38:36 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://kenh14.vn/chuyen-tinh-ben-chat-giua-song-gio-cua-hoang-tu-trong-mo-thai-lan-va-my-nhan-hon-tuoi-20220906155750738.chn
+2022-09-07 09:38:37 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is empty] https://soha.vn/hanh-trinh-tu-trai-tim.htm
+2022-09-07 09:38:37 [scrapy.extensions.logstats] INFO: Crawled 82 pages (at 82 pages/min), scraped 8 items (at 8 items/min)
+2022-09-07 09:38:37 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://vnexpress.net/trung-quoc-mua-khi-dot-nga-bang-nhan-dan-te-4508086.html
+2022-09-07 09:38:39 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER_DONE] parse_detail https://kenh14.vn/phim-moi-cua-kim-go-eun-co-gi-ma-duoc-khen-nuc-no-20220906222631128.chn
+2022-09-07 09:38:39 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/apple-watch-pro-lo-hinh-anh-truoc-ngay-ra-mat-20220907090052974.htm failed: time data '2022-09-07T09:15::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:38:39 [news_bot.pipelines.data_pusher_kafka] INFO: KafkaPipeline-processItem done https://kenh14.vn/phim-moi-cua-kim-go-eun-co-gi-ma-duoc-khen-nuc-no-20220906222631128.chn
+2022-09-07 09:38:40 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://vnexpress.net/ba-nguyen-phuong-hang-bi-cong-an-binh-duong-de-nghi-truy-to-4508045.html
+2022-09-07 09:38:41 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER_DONE] parse_detail https://kenh14.vn/da-xac-minh-thu-pham-bien-da-lat-thanh-song-sau-con-mua-lon-20220906221217518.chn
+2022-09-07 09:38:41 [news_bot.pipelines.data_pusher_kafka] INFO: KafkaPipeline-processItem done https://kenh14.vn/da-xac-minh-thu-pham-bien-da-lat-thanh-song-sau-con-mua-lon-20220906221217518.chn
+2022-09-07 09:38:42 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/ho-nuoc-ngot-lon-nhat-trung-quoc-kho-can-bat-thuong-khien-cay-cau-400-nam-lo-ra-hoan-toan-20220903123506154.htm failed: time data '2022-09-03T21:06::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:38:43 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://vnexpress.net/cong-doan-de-xuat-them-phuong-an-nghi-tu-28-tet-4507760.html
+2022-09-07 09:38:44 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER_DONE] parse_detail https://kenh14.vn/bo-me-son-ye-jin-toi-ung-ho-hyun-bin-yoona-dan-dau-gan-25-minh-tinh-idol-hang-a-do-bo-tham-do-cong-chieu-20220907032742455.chn
+2022-09-07 09:38:44 [news_bot.pipelines.data_pusher_kafka] INFO: KafkaPipeline-processItem done https://kenh14.vn/bo-me-son-ye-jin-toi-ung-ho-hyun-bin-yoona-dan-dau-gan-25-minh-tinh-idol-hang-a-do-bo-tham-do-cong-chieu-20220907032742455.chn
+2022-09-07 09:38:45 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/sau-20-gio-khac-nghiet-o-nam-cuc-nha-khoa-hoc-ra-canh-bao-ve-song-bang-ngay-tan-the-20220906083310732.htm failed: time data '2022-09-06T08:35::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:38:45 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://vnexpress.net/bo-y-te-khuyen-cao-phu-huynh-dua-tre-tu-5-tuoi-di-tiem-vaccine-4508070.html
+2022-09-07 09:38:47 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://kenh14.vn/chan-dung-iphone-14-series-ro-net-truoc-gio-g-nang-cap-toan-dien-nhieu-phien-ban-mau-sac-moi-20220906102040678.chn
+2022-09-07 09:38:47 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://vnexpress.net/tong-thong-tho-nhi-ky-chau-au-gieo-nhan-nao-gat-qua-nay-4507999.html
+2022-09-07 09:38:48 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/reuters-phan-tich-chinh-sach-xe-dien-moi-da-dat-dau-cham-cho-giac-mo-my-cua-hyundai-va-kia-20220904215040618.htm failed: time data '2022-09-06T19:11::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:38:49 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://kenh14.vn/hoa-minzy-len-tieng-toi-va-anh-hai-thuc-su-da-khong-the-quay-lai-voi-nhau-20220906134120896.chn
+2022-09-07 09:38:49 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://vnexpress.net/giam-doc-benh-vien-thu-duc-chi-60-ty-dong-nho-cong-an-chay-an-4508055.html
+2022-09-07 09:38:50 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is empty] https://soha.vn/kham-pha.htm
+2022-09-07 09:38:51 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://vnexpress.net/bao-mat-troi-co-the-gay-song-than-khong-4507662.html
+2022-09-07 09:38:51 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://kenh14.vn/thong-nhat-phuong-an-nghi-tet-nguyen-dan-2023-keo-dai-7-ngay-20220906150801494.chn
+2022-09-07 09:38:52 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://vnexpress.net/rai-52-don-chang-trai-ha-tinh-gianh-hoc-bong-tien-si-tai-bi-4507863.html
+2022-09-07 09:38:53 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/trieu-phu-dat-duoc-tu-do-tai-chinh-nghi-huu-som-o-tuoi-35-nho-7-quan-diem-nguoc-doi-20220906224733386.htm failed: time data '2022-09-07T09:00::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:38:54 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER_DONE] parse_detail https://kenh14.vn/ket-qua-cup-c1-chau-au-man-city-va-real-madrid-dai-thang-chelsea-thua-muoi-mat-20220907070103621.chn
+2022-09-07 09:38:54 [news_bot.pipelines.data_pusher_kafka] INFO: KafkaPipeline-processItem done https://kenh14.vn/ket-qua-cup-c1-chau-au-man-city-va-real-madrid-dai-thang-chelsea-thua-muoi-mat-20220907070103621.chn
+2022-09-07 09:38:54 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/10-trai-nghiem-kham-pha-tuyet-nhat-o-viet-nam-20220906102859124.htm failed: time data '2022-09-06T19:15::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:38:55 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://vnexpress.net/binance-bi-to-choi-xau-doi-thu-4508063.html
+2022-09-07 09:38:56 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER_DONE] parse_detail https://kenh14.vn/ha-noi-xuyen-dem-tim-kiem-doi-nam-nu-nhay-cau-long-bien-20220907083014199.chn
+2022-09-07 09:38:56 [news_bot.pipelines.data_pusher_kafka] INFO: KafkaPipeline-processItem done https://kenh14.vn/ha-noi-xuyen-dem-tim-kiem-doi-nam-nu-nhay-cau-long-bien-20220907083014199.chn
+2022-09-07 09:38:57 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/chuyen-gia-noi-tieng-chi-ra-10-thoi-quen-giup-cha-me-va-con-ngay-cang-gan-ket-than-thiet-20220906153757964.htm failed: time data '2022-09-06T20:04::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:38:58 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://vnexpress.net/pho-thong-doc-se-cap-them-han-muc-tin-dung-cho-ngan-hang-tot-4508097.html
+2022-09-07 09:38:58 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER_DONE] parse_detail https://kenh14.vn/chau-be-2-tuoi-bi-me-de-mang-ban-duoc-ban-giao-cho-bo-nuoi-duong-20220907082548547.chn
+2022-09-07 09:38:58 [news_bot.pipelines.data_pusher_kafka] INFO: KafkaPipeline-processItem done https://kenh14.vn/chau-be-2-tuoi-bi-me-de-mang-ban-duoc-ban-giao-cho-bo-nuoi-duong-20220907082548547.chn
+2022-09-07 09:38:59 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/cho-du-khach-vao-chua-tu-dac-san-du-lich-gay-sot-o-han-quoc-chi-phi-12-trieu-dong-dem-20220905173419858.htm failed: time data '2022-09-06T20:12::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:39:00 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER_DONE] parse_detail https://vnexpress.net/thua-thien-hue-thay-doi-quy-hoach-con-hen-tren-song-huong-4508044.html
+2022-09-07 09:39:00 [news_bot.pipelines.data_pusher_kafka] INFO: KafkaPipeline-processItem done https://vnexpress.net/thua-thien-hue-thay-doi-quy-hoach-con-hen-tren-song-huong-4508044.html
+2022-09-07 09:39:01 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is empty] https://soha.vn/doi-song.htm
+2022-09-07 09:39:02 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER_DONE] parse_detail https://kenh14.vn/canh-nhanh-tay-le-mat-cua-cac-sieu-quay-nhi-khien-bo-me-vua-tuc-vua-cuoi-ngat-20220906120035231.chn
+2022-09-07 09:39:02 [news_bot.pipelines.data_pusher_kafka] INFO: KafkaPipeline-processItem done https://kenh14.vn/canh-nhanh-tay-le-mat-cua-cac-sieu-quay-nhi-khien-bo-me-vua-tuc-vua-cuoi-ngat-20220906120035231.chn
+2022-09-07 09:39:02 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER_DONE] parse_detail https://vnexpress.net/mbappe-giup-psg-ha-juventus-4508129.html
+2022-09-07 09:39:02 [news_bot.pipelines.data_pusher_kafka] INFO: KafkaPipeline-processItem done https://vnexpress.net/mbappe-giup-psg-ha-juventus-4508129.html
+2022-09-07 09:39:03 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER_DONE] parse_detail https://kenh14.vn/nguoi-tre-nghi-viec-rut-het-tien-bao-hiem-xa-hoi-ra-de-chi-tieu-va-lay-von-kinh-doanh-20220902103017663.chn
+2022-09-07 09:39:03 [news_bot.pipelines.data_pusher_kafka] INFO: KafkaPipeline-processItem done https://kenh14.vn/nguoi-tre-nghi-viec-rut-het-tien-bao-hiem-xa-hoi-ra-de-chi-tieu-va-lay-von-kinh-doanh-20220902103017663.chn
+2022-09-07 09:39:04 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/cau-do-tieng-viet-ca-mong-het-nghi-he-goi-la-ca-gi-20220907070342703.htm failed: time data '2022-09-07T07:49::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:39:05 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER_DONE] parse_detail https://vnexpress.net/ky-tich-cuu-song-cu-ong-ngung-tim-40-phut-4508104.html
+2022-09-07 09:39:05 [news_bot.pipelines.data_pusher_kafka] INFO: KafkaPipeline-processItem done https://vnexpress.net/ky-tich-cuu-song-cu-ong-ngung-tim-40-phut-4508104.html
+2022-09-07 09:39:06 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER_DONE] parse_detail https://kenh14.vn/nu-hoang-goi-cam-kpop-hyuna-tung-anh-noi-y-bi-chi-trich-goi-duc-2022090707410518.chn
+2022-09-07 09:39:06 [news_bot.pipelines.data_pusher_kafka] INFO: KafkaPipeline-processItem done https://kenh14.vn/nu-hoang-goi-cam-kpop-hyuna-tung-anh-noi-y-bi-chi-trich-goi-duc-2022090707410518.chn
+2022-09-07 09:39:07 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://vnexpress.net/cay-den-hinh-nguoi-quy-bao-vat-tu-ngoi-mo-co-4507370.html
+2022-09-07 09:39:07 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/com-thuc-qua-tao-nha-cua-mua-thu-ha-noi-20220907074659266.htm failed: time data '2022-09-07T08:24::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:39:08 [news_bot.spiders.news_spider] INFO: Process 18989 : https://kenh14.vn/xem-mua-luon.chn has 5 articles found.
+2022-09-07 09:39:09 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER_DONE] parse_detail https://vnexpress.net/anh-lan-dau-co-4-lanh-dao-chu-chot-khong-phai-dan-ong-da-trang-4508178.html
+2022-09-07 09:39:09 [news_bot.pipelines.data_pusher_kafka] INFO: KafkaPipeline-processItem done https://vnexpress.net/anh-lan-dau-co-4-lanh-dao-chu-chot-khong-phai-dan-ong-da-trang-4508178.html
+2022-09-07 09:39:10 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is empty] https://soha.vn/cu-dan-mang.htm
+2022-09-07 09:39:11 [news_bot.spiders.news_spider] INFO: Process 18989 : https://kenh14.vn/hoc-duong.chn has 7 articles found.
+2022-09-07 09:39:12 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER_DONE] parse_detail https://vnexpress.net/hazard-toa-sang-trong-thang-loi-dam-cua-real-4508137.html
+2022-09-07 09:39:12 [news_bot.pipelines.data_pusher_kafka] INFO: KafkaPipeline-processItem done https://vnexpress.net/hazard-toa-sang-trong-thang-loi-dam-cua-real-4508137.html
+2022-09-07 09:39:13 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/ke-cam-dau-bang-nhom-giang-ho-ao-cam-dai-nao-quan-oc-sa-luoi-sau-hai-nam-lan-tron-20220907072043804.htm failed: time data '2022-09-07T08:40::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:39:13 [news_bot.spiders.news_spider] INFO: Process 18989 : https://kenh14.vn/sport.chn has 9 articles found.
+2022-09-07 09:39:14 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER_DONE] parse_detail https://vnexpress.net/dieu-bat-ngo-danh-cho-tai-xe-bi-lua-6-trieu-dong-4508081.html
+2022-09-07 09:39:14 [news_bot.pipelines.data_pusher_kafka] INFO: KafkaPipeline-processItem done https://vnexpress.net/dieu-bat-ngo-danh-cho-tai-xe-bi-lua-6-trieu-dong-4508081.html
+2022-09-07 09:39:15 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/xu-phat-kich-khung-nu-streamer-co-phat-ngon-xuc-pham-lanh-dao-cap-cao-20220906192545444.htm failed: time data '2022-09-06T20:45::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:39:16 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER_DONE] parse_detail https://vnexpress.net/iaea-cong-bo-bao-cao-ve-nha-may-zaporizhzhia-4508145.html
+2022-09-07 09:39:16 [news_bot.pipelines.data_pusher_kafka] INFO: KafkaPipeline-processItem done https://vnexpress.net/iaea-cong-bo-bao-cao-ve-nha-may-zaporizhzhia-4508145.html
+2022-09-07 09:39:16 [news_bot.spiders.news_spider] INFO: Process 18989 : https://kenh14.vn/the-gioi-do-day.chn has 9 articles found.
+2022-09-07 09:39:16 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/bo-tai-chinh-phoi-hop-bo-cong-an-tiep-tuc-dieu-tra-vu-flc-20220907070738749.htm failed: time data '2022-09-07T07:31::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:39:17 [news_bot.spiders.news_spider] INFO: Process 18989 : https://kenh14.vn/xa-hoi.chn has 7 articles found.
+2022-09-07 09:39:18 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/truy-to-cuu-can-bo-nhan-37-trieu-usd-de-hua-hen-chay-an-20220907070235327.htm failed: time data '2022-09-07T08:19::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:39:19 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER_DONE] parse_detail https://vnexpress.net/chau-au-tim-cach-giup-dan-chong-choi-gia-nang-luong-cao-4508017.html
+2022-09-07 09:39:19 [news_bot.pipelines.data_pusher_kafka] INFO: KafkaPipeline-processItem done https://vnexpress.net/chau-au-tim-cach-giup-dan-chong-choi-gia-nang-luong-cao-4508017.html
+2022-09-07 09:39:19 [news_bot.spiders.news_spider] INFO: Process 18989 : https://kenh14.vn/an-quay-di.chn has 0 articles found.
+2022-09-07 09:39:21 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is empty] https://soha.vn/phap-luat.htm
+2022-09-07 09:39:21 [news_bot.spiders.news_spider] INFO: Process 18989 : https://kenh14.vn/money-z.chn has 7 articles found.
+2022-09-07 09:39:22 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER_DONE] parse_detail https://vnexpress.net/haaland-giup-man-city-thang-dam-o-champions-league-4508130.html
+2022-09-07 09:39:22 [news_bot.pipelines.data_pusher_kafka] INFO: KafkaPipeline-processItem done https://vnexpress.net/haaland-giup-man-city-thang-dam-o-champions-league-4508130.html
+2022-09-07 09:39:23 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/truoc-tran-quyet-dau-quang-hai-dong-doi-nhan-duoc-thong-diep-bat-ngo-tu-cuu-binh-pau-fc-20220905154410057.htm failed: time data '2022-09-05T15:49::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:39:23 [news_bot.spiders.news_spider] INFO: Process 18989 : https://kenh14.vn/doi-song.chn has 7 articles found.
+2022-09-07 09:39:24 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER_DONE] parse_detail https://vnexpress.net/tan-thu-tuong-anh-cam-ket-cung-my-chong-nga-4508138.html
+2022-09-07 09:39:24 [news_bot.pipelines.data_pusher_kafka] INFO: KafkaPipeline-processItem done https://vnexpress.net/tan-thu-tuong-anh-cam-ket-cung-my-chong-nga-4508138.html
+2022-09-07 09:39:26 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://vnexpress.net/toan-hoc-lang-phi-4507882.html
+2022-09-07 09:39:27 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/trong-ngay-man-united-de-bep-arsenal-co-mot-ronaldo-da-tinh-giac-20220905074914168.htm failed: time data '2022-09-05T07:49::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:39:27 [news_bot.spiders.news_spider] INFO: Process 18989 : https://kenh14.vn/beauty-fashion.chn has 10 articles found.
+2022-09-07 09:39:28 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER_DONE] parse_detail https://vnexpress.net/giac-mo-co-nha-sai-gon-4507972.html
+2022-09-07 09:39:28 [news_bot.pipelines.data_pusher_kafka] INFO: KafkaPipeline-processItem done https://vnexpress.net/giac-mo-co-nha-sai-gon-4507972.html
+2022-09-07 09:39:29 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/doi-bong-viet-nam-dung-dau-bang-giai-dong-nam-a-voi-thanh-tich-toan-thang-20220906154724668.htm failed: time data '2022-09-06T15:47::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:39:29 [news_bot.spiders.news_spider] INFO: Process 18989 : https://kenh14.vn/musik.chn has 7 articles found.
+2022-09-07 09:39:30 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://vnexpress.net/truoc-ngay-doc-lap-4505599.html
+2022-09-07 09:39:31 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is empty] https://soha.vn/the-thao.htm
+2022-09-07 09:39:31 [news_bot.spiders.news_spider] INFO: Process 18989 : https://kenh14.vn/cine.chn has 7 articles found.
+2022-09-07 09:39:33 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://vnexpress.net/noi-cho-dan-hieu-4506755.html
+2022-09-07 09:39:33 [news_bot.spiders.news_spider] INFO: Process 18989 : https://kenh14.vn/tv-show.chn has 9 articles found.
+2022-09-07 09:39:34 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is empty] https://soha.vn/video/bien-hoa-menh-mong-bien-nuoc-quoc-lo-51-giao-thong-hon-loan-trong-dem-136732.htm
+2022-09-07 09:39:35 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://vnexpress.net/khat-vong-la-chinh-minh-4506964.html
+2022-09-07 09:39:36 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER_DONE] parse_detail https://kenh14.vn/nu-dai-gia-u70-quay-roi-tinh-duc-nam-dien-vien-9x-tren-song-livestream-2022090620593182.chn
+2022-09-07 09:39:36 [scrapy.extensions.logstats] INFO: Crawled 157 pages (at 75 pages/min), scraped 28 items (at 20 items/min)
+2022-09-07 09:39:37 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is empty] https://soha.vn/video.htm
+2022-09-07 09:39:38 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://vnexpress.net/khai-giang-cho-cac-em-4507173.html
+2022-09-07 09:39:39 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER_DONE] parse_detail https://kenh14.vn/hyun-bin-thua-nhan-ban-than-ngay-cang-giong-son-ye-jin-20220907074827437.chn
+2022-09-07 09:39:39 [news_bot.pipelines.data_pusher_kafka] INFO: KafkaPipeline-processItem done https://kenh14.vn/hyun-bin-thua-nhan-ban-than-ngay-cang-giong-son-ye-jin-20220907074827437.chn
+2022-09-07 09:39:39 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/a-hau-dang-thanh-ngan-va-chuyen-tinh-voi-cau-thu-bong-ro-anh-ay-it-noi-nhung-sau-sac-20220906082013238.htm failed: time data '2022-09-06T12:48::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:39:40 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://vnexpress.net/ai-bao-ve-nha-dau-tu-4507626.html
+2022-09-07 09:39:41 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER_DONE] parse_detail https://kenh14.vn/sao-viet-7-9-le-quyen-sam-them-nhan-kim-cuong-sieu-to-20220907072518098.chn
+2022-09-07 09:39:41 [news_bot.pipelines.data_pusher_kafka] INFO: KafkaPipeline-processItem done https://kenh14.vn/sao-viet-7-9-le-quyen-sam-them-nhan-kim-cuong-sieu-to-20220907072518098.chn
+2022-09-07 09:39:42 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/vo-nsnd-cong-ly-chia-se-xuc-dong-nhan-ngay-chong-tro-lai-nha-hat-kich-ha-noi-20220906154348513.htm failed: time data '2022-09-06T19:07::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:39:42 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://vnexpress.net/toan-hoc-lang-phi-4507882.html
+2022-09-07 09:39:43 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER_DONE] parse_detail https://kenh14.vn/top-3-miss-world-vietnam-2022-dung-canh-phu-huynh-nguoi-day-thi-thanh-cong-nguoi-dep-do-di-truyen-20220907074350934.chn
+2022-09-07 09:39:45 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is empty] https://soha.vn/giai-tri.htm
+2022-09-07 09:39:46 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER_DONE] parse_detail https://kenh14.vn/top-3-hoc-vien-ngoi-sao-sau-8-nam-hoa-minzy-su-nghiep-thang-hoa-hoang-yen-chibi-va-bao-kun-the-nao-20220907083154922.chn
+2022-09-07 09:39:46 [news_bot.pipelines.data_pusher_kafka] INFO: KafkaPipeline-processItem done https://kenh14.vn/top-3-hoc-vien-ngoi-sao-sau-8-nam-hoa-minzy-su-nghiep-thang-hoa-hoang-yen-chibi-va-bao-kun-the-nao-20220907083154922.chn
+2022-09-07 09:39:47 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/ukraine-su-dung-uav-de-pha-huy-xe-tang-bay-bmd-2-cua-nga-20220907063114052.htm failed: time data '2022-09-07T09:04::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:39:48 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER_DONE] parse_detail https://kenh14.vn/4-nang-hau-quoc-te-dinh-dam-chuan-bi-do-bo-viet-nam-du-hop-bao-chung-ket-miss-grand-vietnam-2022-20220906222634595.chn
+2022-09-07 09:39:48 [news_bot.pipelines.data_pusher_kafka] INFO: KafkaPipeline-processItem done https://kenh14.vn/4-nang-hau-quoc-te-dinh-dam-chuan-bi-do-bo-viet-nam-du-hop-bao-chung-ket-miss-grand-vietnam-2022-20220906222634595.chn
+2022-09-07 09:39:49 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://vnexpress.net/dong-bang-cho-doi-4501875.html
+2022-09-07 09:39:49 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://vnexpress.net/bat-tien-nam-cho-4503109.html
+2022-09-07 09:39:50 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER_DONE] parse_detail https://kenh14.vn/ven-man-quan-he-phuc-tap-giua-victoria-beckham-cung-con-dau-tai-phiet-va-nguyen-nhan-phia-sau-20220808004541651.chn
+2022-09-07 09:39:50 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/nga-tho-nhi-ky-bat-tay-qua-mat-my-nato-van-bai-nga-ngu-tt-putin-da-danh-doi-dieu-gi-20220427162832248.htm failed: time data '2022-04-27T19:05::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:39:50 [news_bot.pipelines.data_pusher_kafka] INFO: KafkaPipeline-processItem done https://kenh14.vn/ven-man-quan-he-phuc-tap-giua-victoria-beckham-cung-con-dau-tai-phiet-va-nguyen-nhan-phia-sau-20220808004541651.chn
+2022-09-07 09:39:51 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/ten-lua-phong-khong-vac-vai-stinger-bay-vut-len-troi-va-lam-no-tung-uav-20220428082356491.htm failed: time data '2022-04-28T08:24::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:39:52 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://vnexpress.net/hat-hui-quy-binh-on-4502519.html
+2022-09-07 09:39:53 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://kenh14.vn/loi-khuyen-khi-chon-gach-op-tuong-hoan-hao-cho-nha-bep-20220906081304139.chn
+2022-09-07 09:39:54 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/ong-putin-canh-bao-se-phan-ung-nhanh-nhu-chop-doi-voi-moi-de-doa-chien-luoc-20220428083448299.htm failed: time data '2022-04-28T08:34::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:39:54 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://vnexpress.net/chinh-sach-vo-cam-4496843.html
+2022-09-07 09:39:56 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://kenh14.vn/cach-chuan-bi-mam-co-cung-ram-trung-thu-don-gian-dung-chuan-20220905234029703.chn
+2022-09-07 09:39:56 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://vnexpress.net/xin-ve-cho-chet-4500088.html
+2022-09-07 09:39:58 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://kenh14.vn/dam-me-doc-la-khong-nen-bo-qua-phu-kien-pastel-vua-toa-tri-thuc-lai-bung-khi-chat-nay-20220906100031029.chn
+2022-09-07 09:39:58 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/reuters-phan-tich-chinh-sach-xe-dien-moi-da-dat-dau-cham-cho-giac-mo-my-cua-hyundai-va-kia-20220904215040618.htm failed: time data '2022-09-06T19:11::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:39:59 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://vnexpress.net/nguyen-quan-hay-que-quan-4501238.html
+2022-09-07 09:40:00 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://vnexpress.net/benh-giay-to-4503045.html
+2022-09-07 09:40:01 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://kenh14.vn/mau-tu-bep-don-gian-tiet-kiem-ma-dep-mat-20220906080842405.chn
+2022-09-07 09:40:01 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/chuyen-gia-noi-tieng-chi-ra-10-thoi-quen-giup-cha-me-va-con-ngay-cang-gan-ket-than-thiet-20220906153757964.htm failed: time data '2022-09-06T20:04::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:40:03 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://kenh14.vn/lazada-tung-loat-uu-dai-moi-cuc-hot-dip-sieu-sale-chinh-hang-99-khong-chi-gia-hoi-ma-lai-con-qua-them-qua-2022090618354277.chn
+2022-09-07 09:40:03 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://vnexpress.net/quan-xanh-ao-trang-4503911.html
+2022-09-07 09:40:04 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/co-the-su-dung-can-cuoc-cong-dan-gan-chip-thay-so-ho-khau-20220907065623589.htm failed: time data '2022-09-07T09:24::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:40:05 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://kenh14.vn/4-quy-tac-nuoi-day-con-cua-cha-me-nhat-de-tao-nen-nhung-dua-tre-doc-lap-va-le-phep-20220906111124624.chn
+2022-09-07 09:40:06 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://vnexpress.net/shinkansen-o-viet-nam-4504662.html
+2022-09-07 09:40:07 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/nga-tiet-lo-thoa-thuan-tien-te-dac-biet-voi-trung-quoc-20220907083043723.htm failed: time data '2022-09-07T09:30::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:40:08 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://vnexpress.net/mua-nha-bang-luong-4504894.html
+2022-09-07 09:40:09 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://kenh14.vn/thay-co-xu-nghe-bang-rung-loi-suoi-den-truong-sau-mua-lu-20220906214905022.chn
+2022-09-07 09:40:10 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/cau-thu-u20-indonesia-lo-lang-truoc-ngay-tai-dau-u20-viet-nam-2022090709100756.htm failed: time data '2022-09-07T09:30::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:40:10 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://vnexpress.net/that-co-chai-4505190.html
+2022-09-07 09:40:11 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://kenh14.vn/am-anh-voi-nhung-trao-luu-doa-tre-quy-quai-20220906114712005.chn
+2022-09-07 09:40:12 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://vnexpress.net/cha-khoc-cha-cuoi-4505493.html
+2022-09-07 09:40:13 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/gia-vang-hom-nay-7-9-usd-o-at-tang-gia-vang-giam-sau-20220907092432078.htm failed: time data '2022-09-07T09:30::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:40:14 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://vnexpress.net/dem-tien-tra-lai-4505883.html
+2022-09-07 09:40:14 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://kenh14.vn/thuc-hu-viec-truong-khong-cho-hoc-sinh-du-khai-giang-vi-khong-tap-truoc-20220906212925614.chn
+2022-09-07 09:40:16 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/mau-phi-hanh-gia-sau-chuyen-bay-vao-vu-tru-co-dau-hieu-dot-bien-dna-20220907093606671.htm failed: time data '2022-09-07T09:32::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:40:17 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER_DONE] parse_detail https://kenh14.vn/nu-sinh-mac-benh-hiem-ngheo-mo-uoc-tro-thanh-luat-su-20220906211431715.chn
+2022-09-07 09:40:17 [news_bot.pipelines.data_pusher_kafka] INFO: KafkaPipeline-processItem done https://kenh14.vn/nu-sinh-mac-benh-hiem-ngheo-mo-uoc-tro-thanh-luat-su-20220906211431715.chn
+2022-09-07 09:40:17 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://vnexpress.net/con-cuoi-hanh-phuc-khi-thay-bo-be-me-4506498.html
+2022-09-07 09:40:18 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/bien-hoa-menh-mong-bien-nuoc-quoc-lo-51-giao-thong-hon-loan-trong-dem-20220907092042333.htm failed: time data '2022-09-07T09:32::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:40:19 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://vnexpress.net/9-diem-vo-ly-trong-dam-cuoi-nay-nam-o-dau-4506143.html
+2022-09-07 09:40:20 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER_DONE] parse_detail https://kenh14.vn/hanh-dong-cua-hai-cau-be-lop-1-truoc-cua-nha-ve-sinh-khien-dan-mang-tan-chay-20220906115240847.chn
+2022-09-07 09:40:20 [news_bot.pipelines.data_pusher_kafka] INFO: KafkaPipeline-processItem done https://kenh14.vn/hanh-dong-cua-hai-cau-be-lop-1-truoc-cua-nha-ve-sinh-khien-dan-mang-tan-chay-20220906115240847.chn
+2022-09-07 09:40:20 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is empty] https://soha.vn/tin-moi-nhat.htm
+2022-09-07 09:40:22 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://vnexpress.net/cau-be-da-vang-dep-trung-bat-com-4506506.html
+2022-09-07 09:40:23 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER_DONE] parse_detail https://kenh14.vn/khi-hoc-sinh-duoc-lam-chu-le-khai-giang-cua-chinh-minh-2022090708000398.chn
+2022-09-07 09:40:23 [news_bot.pipelines.data_pusher_kafka] INFO: KafkaPipeline-processItem done https://kenh14.vn/khi-hoc-sinh-duoc-lam-chu-le-khai-giang-cua-chinh-minh-2022090708000398.chn
+2022-09-07 09:40:23 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is empty] https://soha.vn/quoc-te.htm
+2022-09-07 09:40:24 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://vnexpress.net/oto-va-lay-vi-doi-giay-cao-got-roi-trung-4506492.html
+2022-09-07 09:40:25 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/5-bo-phan-chat-luong-nhat-cua-con-ca-sanh-ngang-thuoc-bo-nhung-nhieu-nguoi-vut-bo-20220905142316744.htm failed: time data '2022-09-06T19:36::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:40:26 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER_DONE] parse_detail https://kenh14.vn/pau-fc-la-doi-bong-ban-cau-thu-kem-bac-nhat-ligue-2-20220907072142242.chn
+2022-09-07 09:40:26 [news_bot.pipelines.data_pusher_kafka] INFO: KafkaPipeline-processItem done https://kenh14.vn/pau-fc-la-doi-bong-ban-cau-thu-kem-bac-nhat-ligue-2-20220907072142242.chn
+2022-09-07 09:40:27 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://vnexpress.net/con-so-750-o-dau-4506151.html
+2022-09-07 09:40:28 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/5-loi-ich-dang-kinh-ngac-cua-bap-ngo-doi-voi-suc-khoe-20220905134323148.htm failed: time data '2022-09-07T06:22::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:40:29 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://kenh14.vn/van-toan-chia-tay-hagl-khoac-ao-clb-ha-noi-tu-mua-giai-nam-sau-20220906204743811.chn
+2022-09-07 09:40:30 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://vnexpress.net/thuc-trang-nao-ca-vang-khi-di-lam-4506123.html
+2022-09-07 09:40:31 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is empty] https://soha.vn/song-khoe.htm
+2022-09-07 09:40:31 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://kenh14.vn/xem-cau-thu-co-tinh-dot-luoi-nha-tao-nen-pha-dan-xep-cuc-ky-lo-lieu-20220906204545209.chn
+2022-09-07 09:40:32 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://vnexpress.net/vo-lanh-du-vi-danh-chong-truoc-mat-bo-va-anh-4506503.html
+2022-09-07 09:40:33 [scrapy.crawler] INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2022-09-07 09:40:33 [scrapy.crawler] INFO: Received SIGINT twice, forcing unclean shutdown
+2022-09-07 09:40:33 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] [published_time is not today] parse_detail https://kenh14.vn/thu-mon-tung-cuoc-vao-doi-thu-vi-thua-tran-o-afc-cup-2022-20220906204958748.chn
+2022-09-07 09:40:34 [news_bot.spiders.news_spider] ERROR: [NEWS_CRAWLER_ERR] parse_detail https://soha.vn/vo-nsnd-cong-ly-chia-se-xuc-dong-nhan-ngay-chong-tro-lai-nha-hat-kich-ha-noi-20220906154348513.htm failed: time data '2022-09-06T19:07::00+07:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z'
+2022-09-07 09:40:34 [scrapy.core.engine] INFO: Closing spider (shutdown)
+2022-09-07 09:40:34 [scrapy.utils.log] INFO: Scrapy 2.4.0 started (bot: xsocial_news_bot)
+2022-09-07 09:40:34 [scrapy.utils.log] INFO: Versions: lxml 4.9.1.0, libxml2 2.9.14, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 20.3.0, Python 3.10.4 (main, Jun 29 2022, 12:14:53) [GCC 11.2.0], pyOpenSSL 22.0.0 (OpenSSL 3.0.3 3 May 2022), cryptography 37.0.2, Platform Linux-5.15.0-47-generic-x86_64-with-glibc2.35
+2022-09-07 09:40:34 [scrapy.crawler] INFO: Overridden settings:
+{'AJAXCRAWL_ENABLED': True,
+ 'BOT_NAME': 'xsocial_news_bot',
+ 'CONCURRENT_ITEMS': 1000,
+ 'CONCURRENT_REQUESTS': 5000,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 5000,
+ 'COOKIES_ENABLED': False,
+ 'DOWNLOAD_DELAY': 2,
+ 'DOWNLOAD_TIMEOUT': 60,
+ 'DUPEFILTER_CLASS': 'scrapy.dupefilters.BaseDupeFilter',
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_LEVEL': 'INFO',
+ 'NEWSPIDER_MODULE': 'news_bot.spiders',
+ 'REACTOR_THREADPOOL_MAXSIZE': 1000,
+ 'RETRY_ENABLED': False,
+ 'SPIDER_MODULES': ['news_bot.spiders'],
+ 'TELNETCONSOLE_PORT': None,
+ 'USER_AGENT': 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 '
+               '(KHTML, like Gecko) Chrome/37.0.2049.0 Safari/537.36'}
+2022-09-07 09:40:34 [scrapy.extensions.telnet] INFO: Telnet Password: 5ad2c51270b42116
+2022-09-07 09:40:34 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2022-09-07 09:40:34 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] Process 18989 is starting
+2022-09-07 09:40:34 [news_bot.spiders.news_spider] INFO: [NEWS_CRAWLER] Process 18989 is starting, with 4 domains
+2022-09-07 09:40:34 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.ajaxcrawl.AjaxCrawlMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-09-07 09:40:34 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-09-07 09:40:34 [kafka.conn] INFO: <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]>: connecting to localhost:9092 [('127.0.0.1', 9092) IPv4]
+2022-09-07 09:40:34 [kafka.conn] INFO: Probing node bootstrap-0 broker version
+2022-09-07 09:40:34 [kafka.conn] INFO: <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv4 ('127.0.0.1', 9092)]>: Connection complete.
+2022-09-07 09:40:34 [kafka.conn] INFO: Broker version identified as 2.5.0
+2022-09-07 09:40:34 [kafka.conn] INFO: Set configuration api_version=(2, 5, 0) to skip auto check_version requests on startup
+2022-09-07 09:40:34 [scrapy.middleware] INFO: Enabled item pipelines:
+['news_bot.pipelines.data_crawler.NewsCrawlerPipeline',
+ 'news_bot.pipelines.data_normalize.DataNormalizePipeline',
+ 'news_bot.pipelines.data_pusher_kafka.KafkaPipeline']
+2022-09-07 09:40:34 [scrapy.core.engine] INFO: Spider opened
+2022-09-07 09:40:34 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-09-07 09:40:34 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:39209
+[MAIN_CRAWLER] Current time 2022/09/07 09:37:36 ...
+[MAIN_CRAWLER] Prepare list of 4 domains
+Parse : time data ' 00:00:00' does not match format '%Y/%m/%d %H:%M:%S'
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : time data ' 00:00:00' does not match format '%Y/%m/%d %H:%M:%S'
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : time data ' 00:00:00' does not match format '%Y/%m/%d %H:%M:%S'
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : time data ' 00:00:00' does not match format '%Y/%m/%d %H:%M:%S'
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : time data ' 00:00:00' does not match format '%Y/%m/%d %H:%M:%S'
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : time data ' 00:00:00' does not match format '%Y/%m/%d %H:%M:%S'
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : time data ' 00:00:00' does not match format '%Y/%m/%d %H:%M:%S'
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : time data ' 00:00:00' does not match format '%Y/%m/%d %H:%M:%S'
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : time data ' 00:00:00' does not match format '%Y/%m/%d %H:%M:%S'
+Parse : unconverted data remains:  00:00:00
+Parse : time data ' 00:00:00' does not match format '%Y/%m/%d %H:%M:%S'
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : time data ' 00:00:00' does not match format '%Y/%m/%d %H:%M:%S'
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : time data ' 00:00:00' does not match format '%Y/%m/%d %H:%M:%S'
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : time data ' 00:00:00' does not match format '%Y/%m/%d %H:%M:%S'
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : time data ' 00:00:00' does not match format '%Y/%m/%d %H:%M:%S'
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : time data ' 00:00:00' does not match format '%Y/%m/%d %H:%M:%S'
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+Parse : unconverted data remains:  00:00:00
+[MAIN_CRAWLER] Done crawling 800 domains from offset 0, preparing next group from offset 800
+[MAIN_CRAWLER] Current time 2022/09/07 09:40:34 ...
+[MAIN_CRAWLER] Prepare list of 4 domains
+Traceback (most recent call last):
+  File "/home/thanhnv/Desktop/HTTT/DA-HTTT/news-crawler/main.py", line 54, in <module>
+    main()
+  File "/home/thanhnv/Desktop/HTTT/DA-HTTT/news-crawler/main.py", line 37, in main
+    crawl_news(group)
+  File "/home/thanhnv/Desktop/HTTT/DA-HTTT/news-crawler/main.py", line 20, in crawl_news
+    runner.start()
+  File "/home/thanhnv/.local/lib/python3.10/site-packages/scrapy/crawler.py", line 327, in start
+    reactor.run(installSignalHandlers=False)  # blocking call
+  File "/home/thanhnv/.local/lib/python3.10/site-packages/twisted/internet/asyncioreactor.py", line 266, in run
+    self.startRunning(installSignalHandlers=installSignalHandlers)
+  File "/home/thanhnv/.local/lib/python3.10/site-packages/twisted/internet/base.py", line 1262, in startRunning
+    ReactorBase.startRunning(self)
+  File "/home/thanhnv/.local/lib/python3.10/site-packages/twisted/internet/base.py", line 765, in startRunning
+    raise error.ReactorNotRestartable()
+twisted.internet.error.ReactorNotRestartable
+2022-09-07 09:40:34 [kafka.producer.kafka] INFO: Closing the Kafka producer with 0 secs timeout.
+2022-09-07 09:40:34 [kafka.producer.kafka] INFO: Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+2022-09-07 09:40:34 [kafka.producer.kafka] INFO: Closing the Kafka producer with 0 secs timeout.
+2022-09-07 09:40:34 [kafka.producer.kafka] INFO: Proceeding to force close the producer since pending requests could not be completed within timeout 0.
+2022-09-07 09:40:34 [kafka.conn] INFO: <BrokerConnection node_id=bootstrap-0 host=localhost:9092 <connected> [IPv4 ('127.0.0.1', 9092)]>: Closing connection. 

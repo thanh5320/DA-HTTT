@@ -24,14 +24,14 @@
 #  database: xsocial
 #
 postgresql:
-  host: 127.0.0.1
+  host: 38.242.198.251
   port: 5320
   user: root
   password: 'root'
   database: social
 
 kafka:
-  host: 127.0.0.1
+  host: 38.242.198.251
   port: 9092
   article_topic: crawler-news-post
 

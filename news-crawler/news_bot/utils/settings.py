@@ -60,7 +60,7 @@ RETRY_ENABLED = False
 # MONGO_COLLECTION = 'articles'
 
 # KAFKA
-KAFKA_HOST = 'localhost'
+KAFKA_HOST = '38.242.198.251'
 KAFKA_PORT = 9092
 ARTICLE_TOPIC = 'crawler-news-post'
 
@@ -72,7 +72,7 @@ ARTICLE_TOPIC = 'crawler-news-post'
 # POSTGRES_DB = 'mh'
 
 # POSTGRESQL
-POSTGRES_HOST = 'localhost'
+POSTGRES_HOST = '38.242.198.251'
 POSTGRES_PORT = 5320
 POSTGRES_USER = 'root'
 POSTGRES_PASSWORD = 'root'
